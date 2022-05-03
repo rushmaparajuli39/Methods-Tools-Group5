@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2022 at 12:34 AM
+-- Generation Time: May 04, 2022 at 12:42 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -111,7 +111,7 @@ INSERT INTO `cart` (`ItemName`, `ItemID`, `quantity`, `Category`, `Price`) VALUE
 CREATE TABLE `comics` (
   `Title` varchar(100) NOT NULL,
   `Publisher` varchar(100) NOT NULL,
-  `Genre` varchar(100) NOT NULL
+  `price` int(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
