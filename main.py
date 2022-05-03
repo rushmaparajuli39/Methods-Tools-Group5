@@ -664,20 +664,7 @@ while(True):
         if(choice==4):
             print("--------------------------------------------------------")
             Inventory.editstock()
-            #add to the database for available books
-            if (1):
-                print("Enter the ISBN, Price and Title for books to add to database.")
-                ISBN=input()
-                Price=input()
-                Title=input()
-                Books.AddBooks(ISBN, Price, Title)
-            if (2):
-            #add to the database for available movies
-                print("Enter the Name, Type and Price for movies to add to database.")
-                Name=input()
-                Type=input()
-                Price=input()
-                Movies.AddMovies(Name, Type, Price)
+            
 
         if(choice==5):
             print("--------------------------------------------------------")
