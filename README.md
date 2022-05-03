@@ -15,7 +15,7 @@
 
 ## Description: Python menu driven program for an e-commerce store that stores data in MYSQL databases
 
-* This project is the group project for Methods and Tools class where we can use use mysql database and a python for the frontend. Hence, We decided to go with python because it can create a connection to databases easily. 
+* This project is the group project for Methods and Tools class where we can use mysql database and a python for the frontend. Hence, we decided to go with python because it can create a connection to databases easily. 
 
 ## Features:
 
