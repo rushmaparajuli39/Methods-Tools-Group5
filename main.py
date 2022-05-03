@@ -1,5 +1,4 @@
 
-
 from collections import UserDict
 from unicodedata import category
 import mysql.connector
@@ -281,7 +280,7 @@ class Books:
         print(cursor.rowcount, "record(s) inserted.")
         return True #return true if account created sucessful
     
-    def displayPrice(ISBN):
+    def displayPrice():
         ISBN=str(input())
         Books.printitems()
         cursor.execute('SELECT Price FROM book WHERE ISBN=%s' ,(ISBN,))
@@ -304,7 +303,7 @@ class Movies:
         print(cursor.rowcount, "record(s) inserted.")
         return True #return true if account created sucessful
     
-    def displayPrice(Name):
+    def displayPrice():
         Name=str(input())
         Movies.printitems()
         cursor.execute('SELECT Price FROM book WHERE Name=%s' ,(Name,))
@@ -314,11 +313,11 @@ class Comics:
         cursor.execute('SELECT * FROM comics')
         result = cursor.fetchall()
         
-    def AddComics(Title, Publisher, Genre):
+    def AddComics(Title, Publisher, Price):
 
         ## sends query
-        cursor.execute('INSERT INTO book (Title, Publisher, Genere) VALUES (%s, %s, %s)',
-                      (Title, Publisher, Genre))
+        cursor.execute('INSERT INTO book (Title, Publisher, Price) VALUES (%s, %s, %s)',
+                      (Title, Publisher, Price))
         
         ## commits to database
         ## **needed** for changes to be made to a table
@@ -327,7 +326,7 @@ class Comics:
         print(cursor.rowcount, "record(s) inserted.")
         return True #return true if account created sucessful
     
-    def displayPrice(Title):
+    def displayPrice():
         Title=str(input())
         Books.printitems()
         cursor.execute('SELECT Price FROM book WHERE ISBN=%s' ,(Title,))
@@ -515,7 +514,7 @@ while(True):
                 Inventory.printinventorybooks()
             #if the user want to check an specific price of the book
                 print("Do you want to check the price?\n")
-                Books.displayPrice(ISBN)
+                Books.displayPrice()
 
 
 
@@ -531,7 +530,7 @@ while(True):
                 Name=str(input())
                 Type=str(input())
                 Price=str(input())
-                Movies.displayPrice(Name)
+                Movies.displayPrice()
 
 
 
@@ -664,7 +663,20 @@ while(True):
         if(choice==4):
             print("--------------------------------------------------------")
             Inventory.editstock()
-            
+            #add to the database for available books
+            if (1):
+                print("Enter the ISBN, Price and Title for books to add to database.")
+                ISBN=input()
+                Price=input()
+                Title=input()
+                Books.AddBooks(ISBN, Price, Title)
+            if (2):
+            #add to the database for available movies
+                print("Enter the Name, Type and Price for movies to add to database.")
+                Name=input()
+                Type=input()
+                Price=input()
+                Movies.AddMovies(Name, Type, Price)
 
         if(choice==5):
             print("--------------------------------------------------------")
