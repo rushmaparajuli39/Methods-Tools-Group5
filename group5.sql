@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2022 at 11:35 PM
+-- Generation Time: May 04, 2022 at 12:34 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -51,7 +51,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`UserId`, `Password`, `First_Name`, `Last_Name`, `Email`, `Phone_Number`, `Billing_Address`, `Zip`, `CIty`, `State`, `Card_Name`, `Card_Number`, `Shipping_Address`, `Shipping_Zip`, `Order`, `Num_Order`) VALUES
-('', '5436', 'rushma', 'parajuli', 'rushma.parajuli123@gmail.com', '467087679989', '940 N Jackson St', 75038, 'Starkville', 'Mississippi', '940 N Jackson St', 75038, 'Rushma Parajuli', 9, '', 0);
+('', '5436', 'rushma', 'parajuli', 'rushma.parajuli123@gmail.com', '467087679989', '940 N Jackson Street', 39759, 'Starkville', 'Mississippi', '0', 75038, '0', 9, '', 0);
 
 -- --------------------------------------------------------
 
@@ -101,6 +101,18 @@ INSERT INTO `cart` (`ItemName`, `ItemID`, `quantity`, `Category`, `Price`) VALUE
 ('Red Dragon', '54718', '5', '1', 25),
 ('Red Dragon', '54718', '5', '1', 25),
 ('Red Dragon', '54718', '5', '1', 25);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comics`
+--
+
+CREATE TABLE `comics` (
+  `Title` varchar(100) NOT NULL,
+  `Publisher` varchar(100) NOT NULL,
+  `Genre` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
