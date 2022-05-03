@@ -1,4 +1,5 @@
 
+
 from collections import UserDict
 from unicodedata import category
 import mysql.connector
@@ -280,7 +281,7 @@ class Books:
         print(cursor.rowcount, "record(s) inserted.")
         return True #return true if account created sucessful
     
-    def displayPrice(ISBN, Price, Title):
+    def displayPrice(ISBN):
         ISBN=str(input())
         Books.printitems()
         cursor.execute('SELECT Price FROM book WHERE ISBN=%s' ,(ISBN,))
@@ -303,11 +304,33 @@ class Movies:
         print(cursor.rowcount, "record(s) inserted.")
         return True #return true if account created sucessful
     
-    def displayPrice(Name, Type, Price):
+    def displayPrice(Name):
         Name=str(input())
         Movies.printitems()
         cursor.execute('SELECT Price FROM book WHERE Name=%s' ,(Name,))
     
+class Comics:
+    def printitems():
+        cursor.execute('SELECT * FROM comics')
+        result = cursor.fetchall()
+        
+    def AddComics(Title, Publisher, Genre):
+
+        ## sends query
+        cursor.execute('INSERT INTO book (Title, Publisher, Genere) VALUES (%s, %s, %s)',
+                      (Title, Publisher, Genre))
+        
+        ## commits to database
+        ## **needed** for changes to be made to a table
+        mydb.commit() # # we commit(save) the records to the table
+       
+        print(cursor.rowcount, "record(s) inserted.")
+        return True #return true if account created sucessful
+    
+    def displayPrice(Title):
+        Title=str(input())
+        Books.printitems()
+        cursor.execute('SELECT Price FROM book WHERE ISBN=%s' ,(Title,))
         
 
 loggedin=False
