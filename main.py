@@ -1,4 +1,5 @@
 
+
 from collections import UserDict
 from unicodedata import category
 import mysql.connector
@@ -514,7 +515,7 @@ while(True):
                 Inventory.printinventorybooks()
             #if the user want to check an specific price of the book
                 print("Do you want to check the price?\n")
-                Books.displayPrice()
+                Books.displayPrice(ISBN)
 
 
 
@@ -530,7 +531,7 @@ while(True):
                 Name=str(input())
                 Type=str(input())
                 Price=str(input())
-                Movies.displayPrice(Name, Type, Price)
+                Movies.displayPrice(Name)
 
 
 
@@ -539,7 +540,7 @@ while(True):
 
                 print("\nComics")
                 print("\n\nEnter Choice:")
-                Inventory.printinventorycomics()
+                Inventory.printinventorycomics(Name)
                 
         
          #cartinformation
