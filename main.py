@@ -1,5 +1,4 @@
 
-
 from collections import UserDict
 from unicodedata import category
 import mysql.connector
@@ -36,13 +35,13 @@ cursor = mydb.cursor()
 class Account:
     def CreateAccount(UserID, Password, First_Name, Last_Name, Email, Phone_Number, 
                       Billing_Address, Zip, City, State, Card_Name, Card_Number, 
-                      Shipping_Address, Shipping_Zip, Order, Num_Order):
+                      Shipping_Address, Shipping_Zip):
 
         ## sends query
-        cursor.execute('INSERT INTO account (UserId, Password, First_Name, Last_Name, Email, Phone_Number, Billing_Address, Zip, City, State, Card_Name, Card_Number, Shipping_Address, Shipping_Zip, Order, Num_Order) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
+        cursor.execute('INSERT INTO account (UserId, Password, First_Name, Last_Name, Email, Phone_Number, Billing_Address, Zip, City, State, Card_Name, Card_Number, Shipping_Address, Shipping_Zip) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
                       (UserId, Password, First_Name, Last_Name, Email, Phone_Number, 
                       Billing_Address, Zip, City, State, Card_Name, Card_Number, 
-                      Shipping_Address, Shipping_Zip, 0, 0))
+                      Shipping_Address, Shipping_Zip))
         
         ## commits to database
         ## **needed** for changes to be made to a table
