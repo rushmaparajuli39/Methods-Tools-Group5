@@ -6,7 +6,7 @@
 
 * Name: Rushma Parajuli - Student ID: rp1349
 * Name: Khem Dhami- Student ID: kbd167
-* Name: Safal Niraula- Student ID: sd1663 
+* Name: Safal Niraula- Student ID: st1663 
 * Name: Khem Hamal- Student ID: kbh346 
 
 ## Language Used:
@@ -21,7 +21,7 @@
 
 * An e-commerce store that can be run from the command line. 
 
-* Once the system is up and running, users must be able to log in or make an account. 
+* Once the system is up and running, users will be able to log in or make an account. 
 
 * Users can not continue unless they log in,  and that they have the option to terminate if they don't want to log in. 
 
